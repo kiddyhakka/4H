@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新意糖香｜屏東新園糖業文史、原創繪本與現代農業科普平台</title>
+    <title>新意糖香｜屏東新園糖業文史、原創繪本與現代農業科普平台 (電腦桌面版)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Noto Sans TC & Noto Serif TC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
@@ -27,6 +27,7 @@
                             900: '#1b3818'
                         },
                         amberGold: {
+                            100: '#fef3c7',
                             400: '#f3b33e',
                             500: '#e59b20',
                             600: '#c27a13',
@@ -36,6 +37,7 @@
                             50: '#fcfaf5',
                             100: '#f6f0e2',
                             200: '#eddcb8',
+                            300: '#dfca9f',
                             800: '#524333',
                             900: '#382d22'
                         }
@@ -49,236 +51,266 @@
         }
     </script>
     <style>
+        /* Custom Desktop Styles */
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #FBF9F3;
             color: #2D251E;
+            overflow-x: hidden;
         }
         .font-serif-title {
             font-family: 'Noto Serif TC', serif;
         }
         .bg-pattern {
-            background-image: radial-gradient(#d9cbb2 0.75px, transparent 0.75px);
-            background-size: 16px 16px;
+            background-image: radial-gradient(#d9cbb2 0.85px, transparent 0.85px);
+            background-size: 20px 20px;
+        }
+        /* Custom Desktop Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f0e2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c27a13;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a5d0b;
+        }
+        /* Book Spread Effect for Desktop */
+        .book-spread-shadow {
+            box-shadow: 0 20px 40px -15px rgba(56, 45, 34, 0.15), inset 0 0 30px rgba(0,0,0,0.03);
+        }
+        .book-spine {
+            background: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.08) 100%);
         }
     </style>
 </head>
 <body class="bg-kraft-50 text-kraft-900 antialiased selection:bg-amberGold-400 selection:text-kraft-900">
 
-    <!-- 頂部導覽列 Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-kraft-50/95 backdrop-blur-md border-b border-kraft-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- 品牌 Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-full bg-cane-700 text-amberGold-400 flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+    <!-- 頂部導覽列 Navigation Bar (Desktop Master Edition) -->
+    <header class="sticky top-0 z-50 bg-kraft-50/95 backdrop-blur-md border-b border-kraft-200 shadow-sm">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
+            <div class="flex items-center justify-between h-22 py-3">
+                <!-- 品牌 Logo (大螢幕優化) -->
+                <a href="#" class="flex items-center gap-4 group">
+                    <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-cane-700 to-cane-900 text-amberGold-400 flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-105 transition-all duration-300">
                         <i class="fa-solid font-serif">糖</i>
                     </div>
                     <div>
-                        <span class="font-serif-title text-2xl font-bold text-cane-900 tracking-wide block">新意糖香</span>
-                        <span class="text-xs text-amberGold-700 tracking-widest block font-medium">屏東新園糖業文史館</span>
+                        <span class="font-serif-title text-2xl font-black text-cane-900 tracking-wider block">新意糖香</span>
+                        <span class="text-xs text-amberGold-700 tracking-[0.2em] block font-semibold uppercase">屏東新園糖業文史館</span>
                     </div>
                 </a>
 
-                <!-- 桌長選單 Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-7 font-medium text-sm text-kraft-800">
-                    <a href="#about" class="hover:text-cane-700 transition-colors">關於新意</a>
-                    <a href="#picturebook" class="hover:text-cane-700 transition-colors">繪本時光機</a>
-                    <a href="#map-history" class="hover:text-cane-700 transition-colors">地圖看歷史</a>
-                    <a href="#history" class="hover:text-cane-700 transition-colors">砂糖棧單與糖鐵</a>
-                    <a href="#science" class="hover:text-cane-700 transition-colors">甘蔗與糖學百科</a>
-                    <a href="#tours" class="hover:text-cane-700 transition-colors">糖鐵小旅行</a>
-                </div>
+                <!-- 電腦版完整橫向選單 (Desktop Navigation) -->
+                <nav class="flex items-center gap-8 font-medium text-sm text-kraft-800">
+                    <a href="#about" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">關於新意</a>
+                    <a href="#picturebook" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">繪本時光機</a>
+                    <a href="#map-history" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">地圖看歷史</a>
+                    <a href="#history" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">砂糖棧單與糖鐵</a>
+                    <a href="#science" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">甘蔗與糖學百科</a>
+                    <a href="#tours" class="hover:text-cane-700 py-1 border-b-2 border-transparent hover:border-cane-700 transition-all">糖鐵小旅行</a>
+                </nav>
 
-                <!-- 右側按鈕 Actions -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="#calculator" class="bg-amberGold-500 hover:bg-amberGold-600 text-kraft-900 px-4 py-2.5 rounded-xl font-bold text-sm shadow-sm transition-all hover:shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-calculator text-kraft-900"></i>
-                        <span>棧單換算器</span>
+                <!-- 桌長功能按鈕區 -->
+                <div class="flex items-center gap-4">
+                    <a href="#history-calculator" class="bg-amberGold-100 border border-amberGold-400 hover:bg-amberGold-500 hover:text-kraft-900 text-amberGold-800 px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-sm flex items-center gap-2">
+                        <i class="fa-solid fa-file-invoice-dollar text-amberGold-600"></i>
+                        <span>棧單機制說明</span>
                     </a>
-                    <a href="#booking" class="bg-cane-700 hover:bg-cane-800 text-white px-4 py-2.5 rounded-xl font-medium text-sm transition-all shadow-sm">
-                        導覽預約
+                    <a href="#booking" class="bg-cane-700 hover:bg-cane-800 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg">
+                        預約導覽走讀
                     </a>
-                </div>
-
-                <!-- 手機選單按鈕 Mobile Hamburger -->
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-kraft-800 hover:bg-kraft-100">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- 手機側邊選單 Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-kraft-100 border-b border-kraft-200 px-4 pt-2 pb-6 space-y-3 font-medium">
-            <a href="#about" class="block py-2 text-kraft-800 hover:text-cane-700">關於新意糖香</a>
-            <a href="#picturebook" class="block py-2 text-kraft-800 hover:text-cane-700">繪本時光機</a>
-            <a href="#map-history" class="block py-2 text-kraft-800 hover:text-cane-700">糖香啟航：地圖歷史</a>
-            <a href="#history" class="block py-2 text-kraft-800 hover:text-cane-700">砂糖棧單與糖業歷史</a>
-            <a href="#science" class="block py-2 text-kraft-800 hover:text-cane-700">甘蔗與糖學百科</a>
-            <a href="#tours" class="block py-2 text-kraft-800 hover:text-cane-700">新園糖鐵小旅行</a>
-            <div class="pt-2 flex flex-col gap-2">
-                <a href="#calculator" class="w-full text-center bg-amberGold-500 text-kraft-900 font-bold py-2.5 rounded-xl">棧單換算器</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 主視覺區 Hero Section -->
-    <header class="relative overflow-hidden bg-gradient-to-b from-cane-50 via-kraft-100 to-kraft-50 py-16 sm:py-24 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-amberGold-100 border border-amberGold-400 text-amberGold-800 text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full">
-                        <i class="fa-solid fa-train text-amberGold-600"></i>
-                        <span>糖鐵東港線（鹽埔子線）文史數位轉型計畫</span>
-                    </div>
-                    <h1 class="font-serif-title text-4xl sm:text-6xl font-black text-cane-900 leading-tight">
-                        蔗香漫新園，<br>
-                        <span class="text-amberGold-600 underline decoration-amberGold-400 decoration-wavy decoration-2">甜透歲月</span> 的歷史記憶
-                    </h1>
-                    <p class="text-lg text-kraft-800 leading-relaxed max-w-2xl">
-                        跨越高屏溪畔的綠色甘蔗海，串聯台灣最早期票「砂糖棧單」傳奇、萬丹甘蔗育種場科學智慧，與繪本《新園的甜甜時光機》的溫暖視角，帶您重新看見屏東新園的土地結晶。
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#picturebook" class="bg-cane-700 hover:bg-cane-800 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-book-open"></i>
-                            <span>線上試閱繪本</span>
-                        </a>
-                        <a href="#calculator" class="bg-kraft-50 hover:bg-white text-kraft-900 border-2 border-amberGold-500 font-bold px-6 py-3.5 rounded-xl shadow-sm transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-receipt text-amberGold-600"></i>
-                            <span>體驗1950砂糖棧單</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 右側特寫圖卡 Banner Card -->
-                <div class="lg:col-span-5">
-                    <div class="relative bg-white p-6 rounded-3xl shadow-xl border border-kraft-200 transform lg:rotate-2 hover:rotate-0 transition-transform duration-300">
-                        <div class="aspect-[4/3] rounded-2xl bg-cane-100 relative overflow-hidden flex items-center justify-center border border-cane-200">
-                            <div class="text-center p-6">
-                                <div class="w-16 h-16 mx-auto mb-3 bg-amberGold-400 rounded-full flex items-center justify-center text-kraft-900 text-2xl shadow">
-                                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                                </div>
-                                <h3 class="font-serif-title font-bold text-xl text-cane-900">《新園的甜甜時光機》</h3>
-                                <p class="text-xs text-kraft-800 mt-2">甘蔗、五分車與砂糖棧單的鄉土傳奇</p>
-                                <span class="mt-4 inline-block text-xs font-semibold text-cane-700 bg-cane-50 border border-cane-200 px-3 py-1 rounded-lg">繪本全頁 9 頁腳本上線中</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex justify-between items-center text-xs text-kraft-800 font-medium px-1">
-                            <span><i class="fa-solid fa-location-dot text-amberGold-600 mr-1"></i>屏東縣新園鄉原料區</span>
-                            <span><i class="fa-solid fa-train-subway text-cane-600 mr-1"></i>鹽埔子支線全紀錄</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 第一大主題：關於新意糖香 (About Us) -->
-    <section id="about" class="py-20 bg-kraft-50 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 電腦版 主視覺 Banner區 Hero Section (Widescreen Desktop Layout) -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-cane-50 via-kraft-100 to-kraft-50 py-20 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- 左側文案 7 欄 -->
+                <div class="lg:col-span-7 space-y-7">
+                    <div class="inline-flex items-center gap-2.5 bg-amberGold-100 border border-amberGold-400 text-amberGold-800 text-sm font-bold px-4 py-1.5 rounded-full shadow-sm">
+                        <i class="fa-solid fa-train-subway text-amberGold-600"></i>
+                        <span>糖鐵東港線（鹽埔子線）文史數位轉型計畫</span>
+                    </div>
+
+                    <h1 class="font-serif-title text-5xl xl:text-6xl font-black text-cane-900 leading-[1.15] tracking-tight">
+                        蔗香漫新園，<br>
+                        <span class="text-amberGold-600 underline decoration-amberGold-400 decoration-wavy decoration-3">甜透歲月</span> 的歷史記憶
+                    </h1>
+
+                    <p class="text-xl text-kraft-800 leading-relaxed max-w-2xl font-normal">
+                        跨越高屏溪畔的綠色甘蔗海，串聯台灣最早期票「砂糖棧單」傳奇、萬丹甘蔗育種場科學智慧，與繪本《新園的甜甜時光機》的溫暖視角，帶您重新看見屏東新園的土地結晶。
+                    </p>
+
+                    <!-- 電腦版數據簡報條 -->
+                    <div class="grid grid-cols-3 gap-4 pt-2 max-w-xl">
+                        <div class="bg-white/80 backdrop-blur p-4 rounded-2xl border border-kraft-200">
+                            <span class="text-xs text-kraft-800 font-semibold block">糖鐵東港線總長</span>
+                            <span class="font-serif-title text-2xl font-black text-cane-800">22.7 <span class="text-xs font-sans font-normal">公里</span></span>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur p-4 rounded-2xl border border-kraft-200">
+                            <span class="text-xs text-kraft-800 font-semibold block">萬丹育種場保種</span>
+                            <span class="font-serif-title text-2xl font-black text-amberGold-600">1,000+ <span class="text-xs font-sans font-normal">種</span></span>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur p-4 rounded-2xl border border-kraft-200">
+                            <span class="text-xs text-kraft-800 font-semibold block">歷史地圖年代</span>
+                            <span class="font-serif-title text-2xl font-black text-cane-800">1904-2026</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 pt-3">
+                        <a href="#picturebook" class="bg-cane-700 hover:bg-cane-800 text-white font-bold px-7 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-3">
+                            <i class="fa-solid fa-book-open text-lg"></i>
+                            <span>線上試閱雙頁繪本</span>
+                        </a>
+                        <a href="#history-calculator" class="bg-white hover:bg-kraft-50 text-kraft-900 border-2 border-amberGold-500 font-bold px-7 py-4 rounded-xl shadow-sm transition-all flex items-center gap-3">
+                            <i class="fa-solid fa-receipt text-amberGold-600 text-lg"></i>
+                            <span>解密 1950 砂糖棧單</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 右側特寫展示卡 5 欄 (Desktop Display Card) -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-white p-8 rounded-3xl shadow-2xl border border-kraft-200 transform lg:rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <div class="aspect-[16/10] rounded-2xl bg-gradient-to-br from-cane-100 to-amberGold-100 relative overflow-hidden flex items-center justify-center border border-kraft-200 p-6 shadow-inner">
+                            <div class="text-center space-y-3">
+                                <div class="w-18 h-18 mx-auto bg-amberGold-400 rounded-full flex items-center justify-center text-kraft-900 text-3xl shadow-md">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="font-serif-title font-bold text-2xl text-cane-900">《新園的甜甜時光機》</h3>
+                                <p class="text-sm text-kraft-800 font-medium">甘蔗、五分車與砂糖棧單的鄉土傳奇</p>
+                                <span class="inline-block text-xs font-semibold text-cane-800 bg-white/90 border border-cane-300 px-4 py-1.5 rounded-full shadow-sm">全本 9 頁圖卡故事腳本在線</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center text-sm text-kraft-800 font-medium px-2">
+                            <span><i class="fa-solid fa-location-dot text-amberGold-600 mr-2"></i>屏東縣新園鄉原料區</span>
+                            <span><i class="fa-solid fa-train-subway text-cane-600 mr-2"></i>鹽埔子支線全紀錄</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一大主題：關於新意糖香 (About Us - Desktop Grid Panel) -->
+    <section id="about" class="py-24 bg-kraft-50 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SECTION 01</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">關於新意糖香</h2>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-kraft-800 text-base leading-relaxed">
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">關於新意糖香</h2>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-kraft-800 text-lg leading-relaxed">
                     結合屏東新園鄉糖業文史、原創鄉土繪本畫作、萬丹甘蔗育種場科普知識與現代農業循環應用，打造一座不關門的數位文化博物館。
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-kraft-200 space-y-4">
-                    <div class="w-12 h-12 bg-cane-100 rounded-xl flex items-center justify-center text-cane-700 text-xl font-bold">
+            <!-- 電腦版雙欄寬幅對照區 -->
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-kraft-200 space-y-5 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-cane-100 rounded-2xl flex items-center justify-center text-cane-700 text-2xl font-bold">
                         <i class="fa-solid fa-compass"></i>
                     </div>
                     <h3 class="font-serif-title text-2xl font-bold text-cane-900">品牌故事與願景</h3>
-                    <p class="text-kraft-800 text-sm leading-relaxed">
+                    <p class="text-kraft-800 leading-relaxed text-base">
                         「新意糖香」源於對屏東新園鄉這片土地的深厚情感。新園不僅有水稻與紅豆，過去更曾是一片無邊際的甘蔗海。我們期待透過文字、視覺與互動數位體驗，將舊時的糖香轉化為新時代的文創力量與鄉土教育養分。
                     </p>
+                    <div class="pt-2 text-xs text-amberGold-700 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-seedling"></i> 土地情感 ‧ 文化傳承 ‧ 鄉土教育
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-kraft-200 space-y-4">
-                    <div class="w-12 h-12 bg-amberGold-100 rounded-xl flex items-center justify-center text-amberGold-700 text-xl font-bold">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-kraft-200 space-y-5 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-amberGold-100 rounded-2xl flex items-center justify-center text-amberGold-700 text-2xl font-bold">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
                     <h3 class="font-serif-title text-2xl font-bold text-cane-900">地緣歷史與糖業脈絡</h3>
-                    <p class="text-kraft-800 text-sm leading-relaxed">
+                    <p class="text-kraft-800 leading-relaxed text-base">
                         新園原料區曾是日治阿緱工場（屏東總廠）與東港製糖所（南州糖廠）極為關鍵的甘蔗供應地。穿梭於田野間的「糖鐵東港線（鹽埔子線）」，沿途設有仙公廟、港西、烏龍與鹽埔子等站，構築了農民集體記憶中最甜蜜的動脈。
                     </p>
+                    <div class="pt-2 text-xs text-cane-700 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-train"></i> 屏東糖廠 ‧ 南州糖廠 ‧ 東港線
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 全新專題主題：糖香啟航：在地圖中窺見歷史 -->
-    <section id="map-history" class="py-20 bg-white border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 特色專題：糖香啟航：在地圖中窺見歷史 (Widescreen Timeline) -->
+    <section id="map-history" class="py-24 bg-white border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SPECIAL FEATURE</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">糖香啟航：在地圖中窺見歷史</h2>
-                <p class="mt-2 text-kraft-800 font-medium">從百年地圖的演進，看見新園地區從傳統農業聚落邁向現代糖業與交通網絡的軌跡</p>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">糖香啟航：在地圖中窺見歷史</h2>
+                <p class="mt-3 text-kraft-800 font-medium text-lg">從百年地圖的演進，看見新園地區從傳統農業聚落邁向現代糖業與交通網絡的軌跡</p>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 地圖時間軸 Timeline -->
-            <div class="relative border-l-2 border-amberGold-400 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+            <!-- 電腦版 4 階段卡片 (4-Column Desktop Cards) -->
+            <div class="grid lg:grid-cols-4 gap-6">
                 
                 <!-- 1904 & 1927 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 bg-amberGold-500 rounded-full border-4 border-white shadow"></div>
-                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 shadow-sm space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="bg-amberGold-100 text-amberGold-800 font-bold text-xs px-3 py-1 rounded-full">1904年 ~ 1920年代</span>
-                            <span class="text-xs font-mono text-kraft-800">起源：從治理到資源開發藍圖</span>
-                        </div>
-                        <h3 class="font-serif-title text-xl font-bold text-cane-900">1904《臺灣堡圖》與 1927《下淡水溪治水計畫圖》</h3>
-                        <p class="text-xs sm:text-sm text-kraft-800 leading-relaxed">
-                            《臺灣堡圖》確立了瓦磘、新園、烏龍等早期聚落與渡口的雛形。由於新園緊鄰下淡水溪（高屏溪）與東港溪，1927年的大治水工程有效控制洪氾，為後來大面積的甘蔗種植與農業拓墾奠定了安全的土地基礎。
+                <div class="bg-kraft-50 p-7 rounded-3xl border border-kraft-200 flex flex-col justify-between space-y-4 shadow-sm hover:border-amberGold-400 transition-all">
+                    <div class="space-y-3">
+                        <span class="bg-amberGold-100 text-amberGold-800 font-bold text-xs px-3 py-1 rounded-full inline-block">1904年 ~ 1920年代</span>
+                        <h3 class="font-serif-title text-xl font-bold text-cane-900">1904《臺灣堡圖》與 1927《下淡水溪治水圖》</h3>
+                        <p class="text-xs text-kraft-800 leading-relaxed">
+                            《臺灣堡圖》確立了瓦磘、新園、烏龍等早期聚落與渡口的雛形。1927年大治水工程控制洪氾，為後來大面積甘蔗種植奠定安全的土地基礎。
                         </p>
+                    </div>
+                    <div class="pt-4 border-t border-kraft-200 text-[11px] text-kraft-800 font-medium">
+                        <i class="fa-solid fa-water text-blue-600 mr-1"></i> 起源：治理與拓墾藍圖
                     </div>
                 </div>
 
                 <!-- 1930s & 1950s -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 bg-cane-600 rounded-full border-4 border-white shadow"></div>
-                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 shadow-sm space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="bg-cane-100 text-cane-800 font-bold text-xs px-3 py-1 rounded-full">1930年代 ~ 1950年代</span>
-                            <span class="text-xs font-mono text-kraft-800">糖業命脈：新園原料區與五分車網絡</span>
-                        </div>
-                        <h3 class="font-serif-title text-xl font-bold text-cane-900">《屏東總廠鐵道圖》與《1953年臺糖鐵道網圖》</h3>
-                        <p class="text-xs sm:text-sm text-kraft-800 leading-relaxed">
-                            地圖明確劃設廣大的「新園原料區」與「甘棠門甘蔗農場」。台糖東港線（全長22.7公里）穿梭於田野，串聯<b>仙公廟、港西、烏龍、鹽埔子</b>等站，形成深入農村的「五分車物聯網」。
+                <div class="bg-kraft-50 p-7 rounded-3xl border border-kraft-200 flex flex-col justify-between space-y-4 shadow-sm hover:border-cane-600 transition-all">
+                    <div class="space-y-3">
+                        <span class="bg-cane-100 text-cane-800 font-bold text-xs px-3 py-1 rounded-full inline-block">1930年代 ~ 1950年代</span>
+                        <h3 class="font-serif-title text-xl font-bold text-cane-900">《屏東總廠鐵道圖》與《1953台糖鐵道網圖》</h3>
+                        <p class="text-xs text-kraft-800 leading-relaxed">
+                            明確劃設「新園原料區」與「甘棠門甘蔗農場」。台糖東港線（22.7公里）穿梭田野，串聯<b>仙公廟、港西、烏龍、鹽埔子</b>等站。
                         </p>
+                    </div>
+                    <div class="pt-4 border-t border-kraft-200 text-[11px] text-kraft-800 font-medium">
+                        <i class="fa-solid fa-train text-cane-700 mr-1"></i> 命脈：新園五分車物聯網
                     </div>
                 </div>
 
                 <!-- 1960s - 1980s -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 bg-amberGold-600 rounded-full border-4 border-white shadow"></div>
-                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 shadow-sm space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="bg-amberGold-100 text-amberGold-800 font-bold text-xs px-3 py-1 rounded-full">1960年代 ~ 1980年代</span>
-                            <span class="text-xs font-mono text-kraft-800">黃金時代：土地利用極大化與聚落共生</span>
-                        </div>
-                        <h3 class="font-serif-title text-xl font-bold text-cane-900">地形圖上的「農村聚落與大面積蔗田」</h3>
-                        <p class="text-xs sm:text-sm text-kraft-800 leading-relaxed">
-                            從 1963 與 1973 年地形圖可見，新園聚落沿糖鐵與省道台17線擴張，呈現蔗田與村落交織的獨特風貌，五分車不只運蔗，更載運資材與客運，成為常民生活記憶。
+                <div class="bg-kraft-50 p-7 rounded-3xl border border-kraft-200 flex flex-col justify-between space-y-4 shadow-sm hover:border-amberGold-600 transition-all">
+                    <div class="space-y-3">
+                        <span class="bg-amberGold-100 text-amberGold-800 font-bold text-xs px-3 py-1 rounded-full inline-block">1960年代 ~ 1980年代</span>
+                        <h3 class="font-serif-title text-xl font-bold text-cane-900">地形圖上的「聚落與大面積蔗田共生」</h3>
+                        <p class="text-xs text-kraft-800 leading-relaxed">
+                            聚落沿糖鐵與省道台17線擴張，呈現蔗田與村落交織的獨特風貌，五分車不只運蔗，更載運物資與客運，成為常民生活記憶。
                         </p>
+                    </div>
+                    <div class="pt-4 border-t border-kraft-200 text-[11px] text-kraft-800 font-medium">
+                        <i class="fa-solid fa-wheat-awn text-amberGold-600 mr-1"></i> 黃金時代：農村經濟極大化
                     </div>
                 </div>
 
                 <!-- 1990s - 2026 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 bg-red-600 rounded-full border-4 border-white shadow"></div>
-                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 shadow-sm space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span class="bg-red-100 text-red-800 font-bold text-xs px-3 py-1 rounded-full">1990年代 ~ 2026當代</span>
-                            <span class="text-xs font-mono text-kraft-800">地貌轉型：廢線遺跡與高密度多元農業</span>
-                        </div>
-                        <h3 class="font-serif-title text-xl font-bold text-cane-900">《113年像片基本圖》與 2026 現代衛星地圖</h3>
-                        <p class="text-xs sm:text-sm text-kraft-800 leading-relaxed">
-                            糖鐵相繼停駛轉為歷史軌跡，廣闊的甘蔗田細分轉型為紅豆、水稻、設施農業與魚塭。公路網普及取代五分車，舊軌跡轉化為珍貴文史記憶遺產。
+                <div class="bg-kraft-50 p-7 rounded-3xl border border-kraft-200 flex flex-col justify-between space-y-4 shadow-sm hover:border-red-400 transition-all">
+                    <div class="space-y-3">
+                        <span class="bg-red-100 text-red-800 font-bold text-xs px-3 py-1 rounded-full inline-block">1990年代 ~ 2026當代</span>
+                        <h3 class="font-serif-title text-xl font-bold text-cane-900">《113像片基本圖》與 2026 現代衛星地圖</h3>
+                        <p class="text-xs text-kraft-800 leading-relaxed">
+                            糖鐵相繼停駛轉為歷史軌跡，廣闊甘蔗田細分轉型為紅豆、水稻、設施農業與魚塭。舊軌跡轉化為珍貴文史記憶遺產。
                         </p>
+                    </div>
+                    <div class="pt-4 border-t border-kraft-200 text-[11px] text-kraft-800 font-medium">
+                        <i class="fa-solid fa-map-pin text-red-600 mr-1"></i> 轉型：廢線遺跡與多元農業
                     </div>
                 </div>
 
@@ -286,88 +318,91 @@
         </div>
     </section>
 
-    <!-- 第二大主題：繪本時光機 (Picture Book & Story) -->
-    <section id="picturebook" class="py-20 bg-kraft-100 border-b border-kraft-200 bg-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 第二大主題：繪本時光機 (Picture Book Reader - Desktop Two-Page Spread) -->
+    <section id="picturebook" class="py-24 bg-kraft-100 border-b border-kraft-200 bg-pattern">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SECTION 02</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">繪本時光機</h2>
-                <p class="mt-2 text-kraft-800 font-medium">原創繪本《新園的甜甜時光機：甘蔗、五分車與砂糖棧單》線上試閱</p>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">繪本時光機</h2>
+                <p class="mt-3 text-kraft-800 font-medium text-lg">原創繪本《新園的甜甜時光機：甘蔗、五分車與砂糖棧單》線上試閱</p>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 靈魂角色圖鑑 -->
-            <div class="mb-12">
-                <h3 class="font-serif-title text-xl font-bold text-cane-900 mb-6 text-center">── 故事靈魂角色 ──</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-kraft-200 text-center">
-                        <div class="w-20 h-20 mx-auto bg-cane-100 rounded-full flex items-center justify-center text-cane-700 text-3xl font-bold mb-4">
+            <!-- 靈魂角色圖鑑 (Desktop 3-Column Grid) -->
+            <div class="mb-14">
+                <h3 class="font-serif-title text-2xl font-bold text-cane-900 mb-8 text-center">── 故事靈魂角色 ──</h3>
+                <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-kraft-200 text-center space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-22 h-22 mx-auto bg-cane-100 rounded-full flex items-center justify-center text-cane-700 text-4xl font-bold mb-2 shadow-inner">
                             👦
                         </div>
-                        <h4 class="font-serif-title font-bold text-lg text-cane-900">阿明（7歲）</h4>
-                        <p class="text-xs text-amberGold-700 font-semibold mt-1">活潑好奇的新園小朋友</p>
-                        <p class="text-xs text-kraft-800 mt-3 leading-relaxed">對阿公舊藏寶盒裡的泛黃紙張充滿好奇，在探尋解答的過程中揭開鄉土歷史。</p>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">阿明（7歲）</h4>
+                        <p class="text-xs text-amberGold-700 font-bold uppercase">活潑好奇的新園小朋友</p>
+                        <p class="text-sm text-kraft-800 leading-relaxed pt-1">對阿公舊藏寶盒裡的泛黃紙張充滿好奇，在探尋解答的過程中揭開鄉土歷史。</p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-kraft-200 text-center">
-                        <div class="w-20 h-20 mx-auto bg-amberGold-100 rounded-full flex items-center justify-center text-amberGold-700 text-3xl font-bold mb-4">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-kraft-200 text-center space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-22 h-22 mx-auto bg-amberGold-100 rounded-full flex items-center justify-center text-amberGold-700 text-4xl font-bold mb-2 shadow-inner">
                             👴
                         </div>
-                        <h4 class="font-serif-title font-bold text-lg text-cane-900">阿公（70歲）</h4>
-                        <p class="text-xs text-amberGold-700 font-semibold mt-1">資深新園老蔗農</p>
-                        <p class="text-xs text-kraft-800 mt-3 leading-relaxed">親身歷經糖鐵五分車穿梭田野、手持「砂糖棧單」換取物資與嫁妝的黃金歲月。</p>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">阿公（70歲）</h4>
+                        <p class="text-xs text-amberGold-700 font-bold uppercase">資深新園老蔗農</p>
+                        <p class="text-sm text-kraft-800 leading-relaxed pt-1">親身歷經糖鐵五分車穿梭田野、手持「砂糖棧單」換取物資與嫁妝的黃金歲月。</p>
                     </div>
 
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-kraft-200 text-center">
-                        <div class="w-20 h-20 mx-auto bg-red-100 rounded-full flex items-center justify-center text-red-600 text-3xl font-bold mb-4">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-kraft-200 text-center space-y-3 hover:shadow-md transition-shadow">
+                        <div class="w-22 h-22 mx-auto bg-red-100 rounded-full flex items-center justify-center text-red-600 text-4xl font-bold mb-2 shadow-inner">
                             🚂
                         </div>
-                        <h4 class="font-serif-title font-bold text-lg text-cane-900">糖糖火車頭</h4>
-                        <p class="text-xs text-amberGold-700 font-semibold mt-1">台糖黃色五分車精靈</p>
-                        <p class="text-xs text-kraft-800 mt-3 leading-relaxed">穿梭時空的精靈角色，引導阿明回到 1950 年代的新園甘蔗採收與製糖季。</p>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">糖糖火車頭</h4>
+                        <p class="text-xs text-amberGold-700 font-bold uppercase">台糖黃色五分車精靈</p>
+                        <p class="text-sm text-kraft-800 leading-relaxed pt-1">穿梭時空的精靈角色，引導阿明回到 1950 年代的新園甘蔗採收與製糖季。</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 繪本互動翻頁預閱器 -->
-            <div class="bg-white rounded-3xl shadow-xl border border-kraft-200 overflow-hidden max-w-4xl mx-auto">
-                <div class="bg-cane-900 text-white px-6 py-4 flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-book-bookmark text-amberGold-400"></i>
-                        <span class="font-serif-title font-bold">繪本圖卡閱覽器 (共9頁)</span>
+            <!-- 電腦版雙頁開本繪本閱覽器 (Desktop Book Spread Reader) -->
+            <div class="bg-white rounded-3xl shadow-2xl border border-kraft-300 overflow-hidden max-w-6xl mx-auto book-spread-shadow">
+                <!-- 閱讀器頂部導覽列 -->
+                <div class="bg-cane-900 text-white px-8 py-5 flex justify-between items-center border-b border-cane-800">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-book-bookmark text-amberGold-400 text-xl"></i>
+                        <span class="font-serif-title font-bold text-lg">電腦桌面實體開本預覽器 (雙頁模式)</span>
                     </div>
-                    <span id="pageIndicator" class="text-xs bg-cane-800 text-amberGold-300 px-3 py-1 rounded-full font-mono">頁次 1 / 9</span>
+                    <span id="pageIndicator" class="text-sm bg-cane-800 text-amberGold-300 px-4 py-1.5 rounded-full font-mono font-bold">頁次 1 / 9</span>
                 </div>
 
-                <div class="p-8 min-h-[360px] flex flex-col justify-between" id="bookDisplayArea">
-                    <!-- JS 動態渲染頁面內容 -->
+                <!-- 雙頁開本內容展示區 (Desktop Spread Layout) -->
+                <div class="p-10 min-h-[460px] relative bg-[#faf8f3] book-spine" id="bookDisplayArea">
+                    <!-- JS 動態渲染雙頁畫面 -->
                 </div>
 
-                <div class="bg-kraft-100 px-6 py-4 border-t border-kraft-200 flex justify-between items-center">
-                    <button id="prevPageBtn" class="bg-white hover:bg-kraft-50 text-kraft-900 px-4 py-2 rounded-xl text-sm font-bold border border-kraft-300 transition-colors disabled:opacity-40">
-                        <i class="fa-solid fa-chevron-left mr-1"></i> 上一頁
+                <!-- 底部導覽按鈕區 -->
+                <div class="bg-kraft-100 px-8 py-5 border-t border-kraft-200 flex justify-between items-center">
+                    <button id="prevPageBtn" class="bg-white hover:bg-kraft-50 text-kraft-900 px-6 py-3 rounded-xl text-sm font-bold border border-kraft-300 transition-colors shadow-sm disabled:opacity-40 flex items-center gap-2">
+                        <i class="fa-solid fa-chevron-left"></i> 上一頁
                     </button>
-                    <div class="flex gap-1" id="dotsContainer">
-                        <!-- JS 點點頁碼 -->
+                    <div class="flex gap-2" id="dotsContainer">
+                        <!-- JS 頁碼點標 -->
                     </div>
-                    <button id="nextPageBtn" class="bg-cane-700 hover:bg-cane-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
-                        下一頁 <i class="fa-solid fa-chevron-right ml-1"></i>
+                    <button id="nextPageBtn" class="bg-cane-700 hover:bg-cane-800 text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors shadow-md flex items-center gap-2">
+                        下一頁 <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- 教育資源下載 -->
-            <div class="mt-12 bg-white rounded-2xl p-6 border border-kraft-200 flex flex-wrap justify-between items-center gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-amberGold-100 rounded-xl flex items-center justify-center text-amberGold-700 text-xl">
+            <!-- 教育資源下載 (Desktop Horizontal Card) -->
+            <div class="mt-12 bg-white rounded-2xl p-8 border border-kraft-200 flex justify-between items-center gap-6 max-w-6xl mx-auto shadow-sm">
+                <div class="flex items-center gap-5">
+                    <div class="w-14 h-14 bg-amberGold-100 rounded-2xl flex items-center justify-center text-amberGold-700 text-2xl font-bold">
                         <i class="fa-solid fa-file-pdf"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-cane-900">故事志工與鄉土教育學習單資源包</h4>
-                        <p class="text-xs text-kraft-800">包含親子共讀指南、國小文史學習單 PDF、志工導讀台詞音檔。</p>
+                        <h4 class="font-serif-title font-bold text-lg text-cane-900">故事志工與鄉土教育學習單資源包</h4>
+                        <p class="text-sm text-kraft-800">包含親子共讀指南、國小文史學習單 PDF、志工導讀台詞音檔。</p>
                     </div>
                 </div>
-                <button onclick="alert('教材資源包準備中，即將開放下載！')" class="bg-kraft-100 hover:bg-kraft-200 text-kraft-900 text-sm font-bold px-4 py-2.5 rounded-xl border border-kraft-300 transition-colors">
+                <button onclick="alert('教材資源包準備中，即將開放下載！')" class="bg-kraft-100 hover:bg-kraft-200 text-kraft-900 text-sm font-bold px-6 py-3 rounded-xl border border-kraft-300 transition-colors whitespace-nowrap">
                     下載學習單 (PDF)
                 </button>
             </div>
@@ -375,150 +410,148 @@
     </section>
 
     <!-- 第三大主題：砂糖棧單與糖業歷史 (History & Heritage) -->
-    <section id="history" class="py-20 bg-kraft-50 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="history" class="py-24 bg-kraft-50 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SECTION 03</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">砂糖棧單與糖業歷史</h2>
-                <p class="mt-2 text-kraft-800 font-medium">台灣最早的有價證券與期票傳奇</p>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">砂糖棧單與糖業歷史</h2>
+                <p class="mt-3 text-kraft-800 font-medium text-lg">台灣最早的有價證券與期票傳奇</p>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 專題介紹 -->
-            <div class="grid lg:grid-cols-12 gap-8 items-center mb-16">
-                <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-block bg-amberGold-100 text-amberGold-800 text-xs font-bold px-3 py-1 rounded-md">1946年台糖分糖制度與寄存機制</div>
-                    <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-cane-900">什麼是「砂糖棧單」？</h3>
-                    <p class="text-kraft-800 text-sm sm:text-base leading-relaxed">
+            <!-- 專題介紹 (Desktop 12-Column Split Layout) -->
+            <div class="grid lg:grid-cols-12 gap-10 items-center mb-16">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block bg-amberGold-100 text-amberGold-800 text-xs font-bold px-3.5 py-1.5 rounded-md">1946年台糖分糖制度與寄存機制</div>
+                    <h3 class="font-serif-title text-3xl font-bold text-cane-900">什麼是「砂糖棧單」？</h3>
+                    <p class="text-kraft-800 text-base leading-relaxed">
                         正式名稱為<b>「蔗農糖寄存棧單」</b>。戰後 1946 年起，台糖實施「分糖制度」，蔗農將甘蔗交由糖廠壓榨後，分得的砂糖免費寄存於糖廠倉庫並投保火險。糖廠發給蔗農「棧單」作為提領憑證。
                     </p>
-                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
-                        <div class="p-4 bg-white rounded-xl border border-kraft-200">
-                            <span class="text-amberGold-600 font-bold block text-base">💰 財富象徵</span>
-                            <span class="text-xs text-kraft-800 mt-1 block">物資缺乏年代，持有棧單即代表財力雄厚，常被視為極品嫁妝。</span>
+                    
+                    <div class="grid sm:grid-cols-3 gap-5 pt-2">
+                        <div class="p-5 bg-white rounded-2xl border border-kraft-200 shadow-sm">
+                            <span class="text-amberGold-600 font-bold block text-lg mb-1">💰 財富象徵</span>
+                            <span class="text-xs text-kraft-800 leading-relaxed block">物資缺乏年代，持有棧單即代表財力雄厚，常被視為極品嫁妝。</span>
                         </div>
-                        <div class="p-4 bg-white rounded-xl border border-kraft-200">
-                            <span class="text-amberGold-600 font-bold block text-base">📜 流通金融</span>
-                            <span class="text-xs text-kraft-800 mt-1 block">不必搬動重糖，憑單即可轉讓、換取麵粉或直接購買生活用品。</span>
+                        <div class="p-5 bg-white rounded-2xl border border-kraft-200 shadow-sm">
+                            <span class="text-amberGold-600 font-bold block text-lg mb-1">📜 流通金融</span>
+                            <span class="text-xs text-kraft-800 leading-relaxed block">不必搬動重糖，憑單即可轉讓、換取麵粉或直接購買生活用品。</span>
                         </div>
-                        <div class="p-4 bg-white rounded-xl border border-kraft-200">
-                            <span class="text-amberGold-600 font-bold block text-base">🏪 糖商交易</span>
-                            <span class="text-xs text-kraft-800 mt-1 block">新園媽祖廟前與糖廠門口糖商熱絡收購，形成台灣早期期票雛形。</span>
+                        <div class="p-5 bg-white rounded-2xl border border-kraft-200 shadow-sm">
+                            <span class="text-amberGold-600 font-bold block text-lg mb-1">🏪 糖商交易</span>
+                            <span class="text-xs text-kraft-800 leading-relaxed block">新園媽祖廟前與糖廠門口糖商熱絡收購，形成台灣早期期票雛形。</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- 右側：復刻棧單卡片 (Replica Document Card) -->
                 <div class="lg:col-span-5">
-                    <!-- 模擬砂糖棧單復刻框 -->
-                    <div class="bg-amberGold-50 border-2 border-dashed border-amberGold-500 rounded-3xl p-6 relative shadow-md">
-                        <div class="absolute -top-3 left-6 bg-amberGold-500 text-kraft-900 font-bold text-xs px-3 py-1 rounded">
+                    <div class="bg-amberGold-50 border-2 border-dashed border-amberGold-500 rounded-3xl p-8 relative shadow-lg">
+                        <div class="absolute -top-3.5 left-8 bg-amberGold-500 text-kraft-900 font-bold text-xs px-4 py-1 rounded shadow-sm">
                             文物復刻展示
                         </div>
-                        <div class="text-center font-serif-title py-4 border-b border-amberGold-200">
+                        <div class="text-center font-serif-title py-4 border-b border-amberGold-200 space-y-1">
                             <h4 class="text-2xl font-bold text-kraft-900">臺灣糖業股份有限公司</h4>
-                            <h5 class="text-lg font-bold text-amberGold-700 mt-1">蔗農糖寄存棧單</h5>
+                            <h5 class="text-xl font-bold text-amberGold-700">蔗農糖寄存棧單</h5>
                         </div>
-                        <div class="py-4 space-y-2 text-xs text-kraft-800 font-mono">
-                            <div class="flex justify-between"><span>發單原料區：</span><span class="font-bold text-cane-900">屏東總廠 新園原料區</span></div>
-                            <div class="flex justify-between"><span>存糖地點：</span><span>屏東總廠 糖蜜與砂糖第一倉庫</span></div>
-                            <div class="flex justify-between"><span>面額種類：</span><span>分特二砂 五包 (每包50公斤)</span></div>
+                        <div class="py-5 space-y-3 text-sm text-kraft-800 font-mono">
+                            <div class="flex justify-between border-b border-amberGold-200/50 pb-2"><span>發單原料區：</span><span class="font-bold text-cane-900">屏東總廠 新園原料區</span></div>
+                            <div class="flex justify-between border-b border-amberGold-200/50 pb-2"><span>存糖地點：</span><span>屏東總廠 糖蜜與砂糖第一倉庫</span></div>
+                            <div class="flex justify-between border-b border-amberGold-200/50 pb-2"><span>面額種類：</span><span>分特二砂 五包 (每包50公斤)</span></div>
                             <div class="flex justify-between"><span>權利證明：</span><span>得任意轉讓、隨時憑單提領或買賣</span></div>
                         </div>
-                        <div class="text-center pt-2 text-[10px] text-kraft-800">
+                        <div class="text-center pt-2 text-xs text-kraft-800 italic">
                             引述民國68年《糖業手冊》第555-556頁記載
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 互動器：1950 砂糖棧單換算器 Calculator -->
-            <div id="calculator" class="bg-white rounded-3xl p-8 shadow-lg border border-kraft-200 max-w-4xl mx-auto">
-                <div class="text-center mb-8">
-                    <h3 class="font-serif-title text-2xl font-bold text-cane-900">🧮 1950s 砂糖棧單換算器</h3>
-                    <p class="text-xs text-kraft-800 mt-1">輸入您的甘蔗採收重量，計算在 1950 年代您可以換得多少砂糖與棧單價值！</p>
+            <!-- 改版：1950s 砂糖棧單分糖與換算機制說明卡片 (Desktop Infographic Panel) -->
+            <div id="history-calculator" class="bg-white rounded-3xl p-10 shadow-xl border border-kraft-200 max-w-5xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="bg-amberGold-100 text-amberGold-800 text-xs font-bold px-4 py-1.5 rounded-full inline-block mb-2">歷史金融解密</span>
+                    <h3 class="font-serif-title text-3xl font-bold text-cane-900">📜 1950s 砂糖棧單分糖與換算機制說明</h3>
+                    <p class="text-sm text-kraft-800 mt-2">戰後台糖獨特的分糖寄倉制度，打造了農村社會最具價值的「砂糖有價證券」</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="space-y-5">
-                        <div>
-                            <label class="block text-sm font-bold text-kraft-900 mb-2">輸入甘蔗採收重量 (公斤 kg)：</label>
-                            <input type="number" id="caneWeightInput" value="1000" min="100" step="100" class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none text-lg font-bold">
-                            <p class="text-[11px] text-kraft-800 mt-1">例：1000 kg (約一公噸甘蔗)</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- 卡片 1: 分糖公式 -->
+                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 space-y-4">
+                        <div class="w-12 h-12 bg-cane-100 text-cane-700 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-calculator"></i>
                         </div>
-
-                        <div>
-                            <label class="block text-sm font-bold text-kraft-900 mb-2">當時分糖比例 (蔗農分得比率)：</label>
-                            <select id="shareRatioSelect" class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none font-medium">
-                                <option value="0.5" selected>50% (戰後標準分糖比率)</option>
-                                <option value="0.55">55% (優良獎勵分糖比率)</option>
-                            </select>
-                        </div>
-
-                        <button id="calculateBtn" class="w-full bg-amberGold-500 hover:bg-amberGold-600 text-kraft-900 font-bold py-3.5 rounded-xl shadow transition-all">
-                            開始計算棧單面額與換算價值
-                        </button>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">1. 分糖比率與換算</h4>
+                        <ul class="text-xs text-kraft-800 space-y-2.5 leading-relaxed">
+                            <li><b>• 蔗農分糖比例：</b>標準為 <b>50%</b>（特優獎勵可達 55%）。</li>
+                            <li><b>• 平均含糖率：</b>甘蔗經壓榨平均含糖率約 <b>12%</b>。</li>
+                            <li><b>• 實例試算：</b>交採 <b>1000 kg (1噸)</b> 甘蔗，產糖 120 kg，蔗農實得 <b>60 kg 砂糖</b>。</li>
+                        </ul>
                     </div>
 
-                    <div class="bg-kraft-100 p-6 rounded-2xl border border-kraft-200 space-y-4">
-                        <h4 class="font-serif-title font-bold text-cane-900 border-b border-kraft-300 pb-2">試算結果報告：</h4>
-                        <div class="space-y-3 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-kraft-800">產出砂糖總量 (含糖率12%)：</span>
-                                <span id="resTotalSugar" class="font-bold font-mono text-cane-900">120 kg</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-kraft-800">蔗農實得砂糖：</span>
-                                <span id="resFarmerSugar" class="font-bold font-mono text-amberGold-700">60 kg</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-kraft-800">可折換特二砂 (50kg/包)：</span>
-                                <span id="resBags" class="font-bold text-base text-cane-800">1 包 + 散糖 10 kg</span>
-                            </div>
-                            <hr class="border-kraft-300">
-                            <div>
-                                <span class="text-xs text-kraft-800 block mb-1">1950年代生活等值購買力：</span>
-                                <p id="resEquiv" class="font-bold text-cane-900 text-sm leading-snug">
-                                    約可換取 1.2 包大日本麵粉，或向糖商即時兌換新台幣作為一家數口月度用款！
-                                </p>
-                            </div>
+                    <!-- 卡片 2: 面額規格 -->
+                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 space-y-4">
+                        <div class="w-12 h-12 bg-amberGold-100 text-amberGold-700 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-boxes-stacked"></i>
                         </div>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">2. 棧單面額種類</h4>
+                        <ul class="text-xs text-kraft-800 space-y-2.5 leading-relaxed">
+                            <li><b>• 標準糖包：</b>特二砂每包標準重量為 <b>50 公斤</b>。</li>
+                            <li><b>• 發行面額：</b>分為<b>一包、二包、五包、十包</b>等規格。</li>
+                            <li><b>• 散糖處理：</b>未滿整包之星散砂糖，則由糖廠提領現糖帶回食用。</li>
+                        </ul>
                     </div>
+
+                    <!-- 卡片 3: 實際購買力 -->
+                    <div class="bg-kraft-50 p-6 rounded-2xl border border-kraft-200 space-y-4">
+                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h4 class="font-serif-title font-bold text-xl text-cane-900">3. 1950s 生活等值購買力</h4>
+                        <ul class="text-xs text-kraft-800 space-y-2.5 leading-relaxed">
+                            <li><b>• 麵粉兌換：</b>1 包砂糖棧單約可兌換 <b>1.2~1.5 包進口麵粉</b>。</li>
+                            <li><b>• 糖商變現：</b>新園媽祖廟前糖商隨時現金收購，支應一家數口開支。</li>
+                            <li><b>• 極品嫁妝：</b>數張大面額棧單即為農家最頂級之嫁妝與起厝資產。</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- 糖鐵東港線（鹽埔子線）沿線舊跡 -->
+            <!-- 糖鐵東港線（鹽埔子線）沿線車站 (Desktop 6-Column Station Cards) -->
             <div class="mt-20">
                 <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-8">🚂 糖鐵東港線（鹽埔子線）車站巡禮</h3>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
-                    <div class="bg-white p-4 rounded-xl border border-kraft-200 text-center">
-                        <div class="text-xs text-amberGold-700 font-bold">起點</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">屏東 (工場)</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">屏東總廠所在地，煙囪壓榨中心</div>
+                <div class="grid lg:grid-cols-6 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-kraft-200 text-center shadow-sm">
+                        <div class="text-xs text-amberGold-700 font-bold">起點站</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">屏東 (工場)</div>
+                        <div class="text-xs text-kraft-800 mt-2">屏東總廠所在地，煙囪壓榨中心</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-kraft-200 text-center">
+                    <div class="bg-white p-5 rounded-2xl border border-kraft-200 text-center shadow-sm">
                         <div class="text-xs text-amberGold-700 font-bold">第 2 站</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">萬丹</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">萬丹甘蔗育種場重要交通樞紐</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">萬丹</div>
+                        <div class="text-xs text-kraft-800 mt-2">萬丹甘蔗育種場重要交通樞紐</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border-2 border-amberGold-500 text-center shadow-sm bg-amberGold-50/30">
+                    <div class="bg-white p-5 rounded-2xl border-2 border-amberGold-500 text-center shadow-md bg-amberGold-50/40">
                         <div class="text-xs text-amberGold-700 font-bold">新園境內 1</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">仙公廟</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">新園北端聚落集甘蔗裝車場</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">仙公廟</div>
+                        <div class="text-xs text-kraft-800 mt-2">新園北端聚落集甘蔗裝車場</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border-2 border-amberGold-500 text-center shadow-sm bg-amberGold-50/30">
+                    <div class="bg-white p-5 rounded-2xl border-2 border-amberGold-500 text-center shadow-md bg-amberGold-50/40">
                         <div class="text-xs text-amberGold-700 font-bold">新園境內 2</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">港西</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">新園鄉主要農業聚落交會點</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">港西</div>
+                        <div class="text-xs text-kraft-800 mt-2">新園鄉主要農業聚落交會點</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border-2 border-amberGold-500 text-center shadow-sm bg-amberGold-50/30">
+                    <div class="bg-white p-5 rounded-2xl border-2 border-amberGold-500 text-center shadow-md bg-amberGold-50/40">
                         <div class="text-xs text-amberGold-700 font-bold">新園境內 3</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">烏龍</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">龍津古井與新園文史核心聚落</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">烏龍</div>
+                        <div class="text-xs text-kraft-800 mt-2">龍津古井與新園文史核心聚落</div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border-2 border-amberGold-500 text-center shadow-sm bg-amberGold-50/30">
+                    <div class="bg-white p-5 rounded-2xl border-2 border-amberGold-500 text-center shadow-md bg-amberGold-50/40">
                         <div class="text-xs text-amberGold-700 font-bold">終點站</div>
-                        <div class="font-serif-title font-bold text-lg text-cane-900 mt-1">鹽埔子</div>
-                        <div class="text-[11px] text-kraft-800 mt-2">鹽埔村終點站，銜接東港溪</div>
+                        <div class="font-serif-title font-bold text-xl text-cane-900 mt-1">鹽埔子</div>
+                        <div class="text-xs text-kraft-800 mt-2">鹽埔村終點站，銜接東港溪</div>
                     </div>
                 </div>
             </div>
@@ -526,41 +559,41 @@
     </section>
 
     <!-- 第四大主題：甘蔗與糖蜜小百科 (Sugar & Agricultural Science) -->
-    <section id="science" class="py-20 bg-kraft-100 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="science" class="py-24 bg-kraft-100 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SECTION 04</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">甘蔗與糖學大百科</h2>
-                <p class="mt-2 text-kraft-800 font-medium">結合萬丹甘蔗育種場（林秉峰廠長訪談精華）與屏東總廠生科智慧</p>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">甘蔗與糖學大百科</h2>
+                <p class="mt-3 text-kraft-800 font-medium text-lg">結合萬丹甘蔗育種場（林秉峰廠長訪談精華）與屏東總廠生科智慧</p>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- 1. 甘蔗三大分類對照 -->
-            <div class="bg-white rounded-3xl p-8 shadow-sm border border-kraft-200 mb-12">
-                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-6">🎋 不是所有甘蔗都能當水果：甘蔗三大分類對照</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-5 bg-red-50/50 rounded-2xl border border-red-200">
-                        <div class="text-2xl mb-2">🍎 鮮食蔗 (Chewing)</div>
-                        <h4 class="font-bold text-cane-900 text-base">外觀：紅皮</h4>
-                        <ul class="text-xs text-kraft-800 space-y-2 mt-3">
+            <!-- 1. 甘蔗三大分類 (Desktop 3-Column Comparison) -->
+            <div class="bg-white rounded-3xl p-10 shadow-sm border border-kraft-200 mb-12">
+                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-8">🎋 不是所有甘蔗都能當水果：甘蔗三大分類對照</h3>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="p-6 bg-red-50/60 rounded-2xl border border-red-200">
+                        <div class="text-3xl mb-3">🍎 鮮食蔗 (Chewing)</div>
+                        <h4 class="font-bold text-cane-900 text-lg">外觀：紅皮</h4>
+                        <ul class="text-sm text-kraft-800 space-y-2 mt-4">
                             <li><b>• 質地：</b>質地鬆軟、皮薄，可用牙齒咬開。</li>
                             <li><b>• 糖度：</b>糖度適中 (Brix ~18)。</li>
                             <li><b>• 代表：</b>台中1號（埔里常見，歸類為水果）。</li>
                         </ul>
                     </div>
-                    <div class="p-5 bg-cane-50 rounded-2xl border border-cane-200">
-                        <div class="text-2xl mb-2">🥤 榨汁蔗 (Juicing)</div>
-                        <h4 class="font-bold text-cane-900 text-base">外觀：青綠皮（白玉甘蔗）</h4>
-                        <ul class="text-xs text-kraft-800 space-y-2 mt-3">
+                    <div class="p-6 bg-cane-50 rounded-2xl border border-cane-200">
+                        <div class="text-3xl mb-3">🥤 榨汁蔗 (Juicing)</div>
+                        <h4 class="font-bold text-cane-900 text-lg">外觀：青綠皮（白玉甘蔗）</h4>
+                        <ul class="text-sm text-kraft-800 space-y-2 mt-4">
                             <li><b>• 質地：</b>質地稍硬，專供榨汁機連皮連肉榨汁。</li>
                             <li><b>• 糖度：</b>糖度約 Brix 18~20。</li>
                             <li><b>• 特色：</b>不需削皮直接榨汁，金黃色出汁不變黑。</li>
                         </ul>
                     </div>
-                    <div class="p-5 bg-amberGold-50 rounded-2xl border border-amberGold-200">
-                        <div class="text-2xl mb-2">🏭 製糖蔗 (Sugar Cane)</div>
-                        <h4 class="font-bold text-cane-900 text-base">外觀：紅/綠/青皮皆有</h4>
-                        <ul class="text-xs text-kraft-800 space-y-2 mt-3">
+                    <div class="p-6 bg-amberGold-50 rounded-2xl border border-amberGold-200">
+                        <div class="text-3xl mb-3">🏭 製糖蔗 (Sugar Cane)</div>
+                        <h4 class="font-bold text-cane-900 text-lg">外觀：紅/綠/青皮皆有</h4>
+                        <ul class="text-sm text-kraft-800 space-y-2 mt-4">
                             <li><b>• 質地：</b>質地極度堅硬，人類牙齒無法咬食。</li>
                             <li><b>• 糖度：</b>糖度極高 (>25 度)，直接啃食會鎖喉。</li>
                             <li><b>• 特色：</b>專供糖廠細裂壓榨，追求高蔗糖與不開花。</li>
@@ -569,143 +602,143 @@
                 </div>
             </div>
 
-            <!-- 2. 萬丹育種場十年試煉 & 生物防治 -->
-            <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-kraft-200 space-y-4">
-                    <div class="flex items-center gap-3 border-b border-kraft-200 pb-3">
-                        <span class="text-3xl">🔬</span>
+            <!-- 2. 萬丹育種場與生物防治 (Desktop 2-Column Panel) -->
+            <div class="grid lg:grid-cols-2 gap-10 mb-12">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-kraft-200 space-y-5">
+                    <div class="flex items-center gap-4 border-b border-kraft-200 pb-4">
+                        <span class="text-4xl">🔬</span>
                         <div>
-                            <h3 class="font-serif-title text-xl font-bold text-cane-900">萬中選一的十年育種試煉</h3>
+                            <h3 class="font-serif-title text-2xl font-bold text-cane-900">萬中選一的十年育種試煉</h3>
                             <p class="text-xs text-amberGold-700 font-bold">全台唯一萬丹甘蔗育種場（1932成立）</p>
                         </div>
                     </div>
-                    <div class="space-y-3 text-xs text-kraft-800">
-                        <div class="flex justify-between items-center p-2 bg-kraft-50 rounded-lg">
+                    <div class="space-y-3 text-sm text-kraft-800">
+                        <div class="flex justify-between items-center p-3 bg-kraft-50 rounded-xl">
                             <span><b>Year 1 (種子培育)：</b>10,000+ 顆人工雜交種子</span>
                             <span class="font-bold text-cane-700">海選</span>
                         </div>
-                        <div class="flex justify-between items-center p-2 bg-kraft-50 rounded-lg">
+                        <div class="flex justify-between items-center p-3 bg-kraft-50 rounded-xl">
                             <span><b>Year 2-5 (初階篩選)：</b>淘汰至 600 種 $\rightarrow$ 100 種</span>
                             <span class="font-bold text-cane-700">精煉</span>
                         </div>
-                        <div class="flex justify-between items-center p-2 bg-kraft-50 rounded-lg">
+                        <div class="flex justify-between items-center p-3 bg-kraft-50 rounded-xl">
                             <span><b>Year 6-9 (農田實測)：</b>放樣實體農場，觀察產量與抗病</span>
                             <span class="font-bold text-cane-700">考驗</span>
                         </div>
-                        <div class="flex justify-between items-center p-2 bg-kraft-50 rounded-lg">
+                        <div class="flex justify-between items-center p-3 bg-kraft-50 rounded-xl">
                             <span><b>Year 10 (最終決選)：</b>僅剩 3 種潛力品系，試種合格命名ROC</span>
                             <span class="font-bold text-amberGold-600">命名</span>
                         </div>
                     </div>
-                    <p class="text-[11px] text-kraft-800 italic bg-amberGold-50 p-2.5 rounded-lg border border-amberGold-200">
+                    <p class="text-xs text-kraft-800 italic bg-amberGold-50 p-3 rounded-xl border border-amberGold-200">
                         💡 萬丹育種場以「活體種植」艱鉅方式保種 1000 多種甘蔗，每公頃僅種 500 種，翻土後需閒置 1~2 年「淨地」防混雜！
                     </p>
                 </div>
 
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-kraft-200 space-y-4">
-                    <div class="flex items-center gap-3 border-b border-kraft-200 pb-3">
-                        <span class="text-3xl">🐝</span>
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-kraft-200 space-y-5">
+                    <div class="flex items-center gap-4 border-b border-kraft-200 pb-4">
+                        <span class="text-4xl">🐝</span>
                         <div>
-                            <h3 class="font-serif-title text-xl font-bold text-cane-900">以蟲剋蟲：屏東總廠生物防治典範</h3>
+                            <h3 class="font-serif-title text-2xl font-bold text-cane-900">以蟲剋蟲：屏東總廠生物防治典範</h3>
                             <p class="text-xs text-amberGold-700 font-bold">1962年 (民國51年) 屏東總廠「養蜂室」傳奇</p>
                         </div>
                     </div>
-                    <ul class="space-y-2.5 text-xs text-kraft-800 leading-relaxed">
+                    <ul class="space-y-3 text-sm text-kraft-800 leading-relaxed">
                         <li><b>1. 飼育寄主昆蟲：</b>養蜂室內大規模飼養「外米綴蛾」。</li>
                         <li><b>2. 繁殖寄生蜂：</b>利用外米綴蛾卵繁殖「赤眼卵寄生蜂」。</li>
                         <li><b>3. 田間釋放天然驅蟲：</b>將赤眼卵寄生蜂釋放至廣大甘蔗田，寄生消滅破壞甘蔗的甘蔗黃螟、條螟與二點螟！</li>
                     </ul>
-                    <div class="p-3 bg-cane-50 rounded-xl border border-cane-200 text-[11px] text-cane-900 font-medium">
+                    <div class="p-4 bg-cane-50 rounded-xl border border-cane-200 text-xs text-cane-900 font-medium">
                         🌱 不使用化學農藥，避免殘留與破壞土壤生態，成為臺灣早年綠色友善農業的先驅！
                     </div>
                 </div>
             </div>
 
-            <!-- 3. 糖的終極光譜 (Sugar Spectrum) -->
-            <div class="bg-white rounded-3xl p-8 shadow-sm border border-kraft-200 mb-12">
-                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-6">🍬 糖的終極光譜：尋找正港「台灣味」</h3>
+            <!-- 3. 糖的終極光譜 (Desktop 4-Column Spectrum) -->
+            <div class="bg-white rounded-3xl p-10 shadow-sm border border-kraft-200 mb-12">
+                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-8">🍬 糖的終極光譜：尋找正港「台灣味」</h3>
                 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                    <div class="p-4 bg-kraft-50 rounded-2xl border border-kraft-200">
-                        <div class="font-bold text-cane-900 text-sm">白糖 (White Sugar)</div>
-                        <p class="text-xs text-kraft-800 mt-1">高雄小港精煉廠重製，抽離雜質與礦物質，不干擾食材原味。</p>
+                <div class="grid lg:grid-cols-4 gap-6 mb-8">
+                    <div class="p-5 bg-kraft-50 rounded-2xl border border-kraft-200">
+                        <div class="font-bold text-cane-900 text-base">白糖 (White Sugar)</div>
+                        <p class="text-xs text-kraft-800 mt-2">高雄小港精煉廠重製，抽離雜質與礦物質，不干擾食材原味。</p>
                     </div>
-                    <div class="p-4 bg-amberGold-50/50 rounded-2xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-800 text-sm">本土二砂 (Ersha)</div>
-                        <p class="text-xs text-kraft-800 mt-1">虎尾與善化糖廠壓榨 100% 台灣甘蔗，保留甘蔗多酚與長方形幾何結晶。</p>
+                    <div class="p-5 bg-amberGold-50/60 rounded-2xl border border-amberGold-200">
+                        <div class="font-bold text-amberGold-800 text-base">本土二砂 (Ersha)</div>
+                        <p class="text-xs text-kraft-800 mt-2">虎尾與善化糖廠壓榨 100% 台灣甘蔗，保留甘蔗多酚與長方形幾何結晶。</p>
                     </div>
-                    <div class="p-4 bg-kraft-50 rounded-2xl border border-kraft-200">
-                        <div class="font-bold text-cane-900 text-sm">冰糖 (Rock Sugar)</div>
-                        <p class="text-xs text-kraft-800 mt-1">巨大不規則結晶，表面積小、溶解速度最慢，適合燉煮東坡肉。</p>
+                    <div class="p-5 bg-kraft-50 rounded-2xl border border-kraft-200">
+                        <div class="font-bold text-cane-900 text-base">冰糖 (Rock Sugar)</div>
+                        <p class="text-xs text-kraft-800 mt-2">巨大不規則結晶，表面積小、溶解速度最慢，適合燉煮東坡肉。</p>
                     </div>
-                    <div class="p-4 bg-amberGold-100/50 rounded-2xl border border-amberGold-300">
-                        <div class="font-bold text-amberGold-900 text-sm">黑糖 (Black Sugar)</div>
-                        <p class="text-xs text-kraft-800 mt-1">完全無結晶過程，甘蔗汁猛火熬煮「炒乾」，綁定糖蜜與最高礦物質。</p>
+                    <div class="p-5 bg-amberGold-100/60 rounded-2xl border border-amberGold-300">
+                        <div class="font-bold text-amberGold-900 text-base">黑糖 (Black Sugar)</div>
+                        <p class="text-xs text-kraft-800 mt-2">完全無結晶過程，甘蔗汁猛火熬煮「炒乾」，綁定糖蜜與最高礦物質。</p>
                     </div>
                 </div>
 
-                <!-- 糖蜜 4 大農業救援特技 -->
-                <div class="p-5 bg-cane-900 text-white rounded-2xl space-y-2">
-                    <h4 class="font-serif-title font-bold text-amberGold-400 text-base">🍯 綠色奇蹟副產品：糖蜜（Molasses）在現代農業的 4 大神救援特技</h4>
-                    <p class="text-xs text-cane-100 leading-relaxed">
+                <!-- 糖蜜 4 大特技 (Desktop 4 Grid) -->
+                <div class="p-6 bg-cane-900 text-white rounded-2xl space-y-3">
+                    <h4 class="font-serif-title font-bold text-amberGold-400 text-lg">🍯 綠色奇蹟副產品：糖蜜（Molasses）在現代農業的 4 大神救援特技</h4>
+                    <p class="text-sm text-cane-100 leading-relaxed">
                         糖蜜富含有機酸、胺基酸、多酚、維生素B群與鉀、鈣、鎂。它並非讓作物「喝糖變甜」，而是作為最佳<b>「碳源與微生物飼料」</b>！
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 pt-2 text-xs">
-                        <div class="bg-cane-800 p-2.5 rounded-lg"><b>① 培養益生菌：</b>木黴菌/枯草桿菌發酵最佳碳源。</div>
-                        <div class="bg-cane-800 p-2.5 rounded-lg"><b>② 活化土壤：</b>果樹灌根提高根系吸肥效率。</div>
-                        <div class="bg-cane-800 p-2.5 rounded-lg"><b>③ 加速堆肥：</b>促使堆肥快速發熱腐熟。</div>
-                        <div class="bg-cane-800 p-2.5 rounded-lg"><b>④ 畜牧與釀酒：</b>配製豬隻飼料與國際萊姆酒（Rum）。</div>
+                    <div class="grid lg:grid-cols-4 gap-3 pt-2 text-xs">
+                        <div class="bg-cane-800 p-3 rounded-xl"><b>① 培養益生菌：</b>木黴菌/枯草桿菌發酵最佳碳源。</div>
+                        <div class="bg-cane-800 p-3 rounded-xl"><b>② 活化土壤：</b>果樹灌根提高根系吸肥效率。</div>
+                        <div class="bg-cane-800 p-3 rounded-xl"><b>③ 加速堆肥：</b>促使堆肥快速發熱腐熟。</div>
+                        <div class="bg-cane-800 p-3 rounded-xl"><b>④ 畜牧與釀酒：</b>配製豬隻飼料與國際萊姆酒（Rum）。</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. 古早味椪糖 DIY 實驗室 -->
-            <div class="bg-amberGold-50 border-2 border-dashed border-amberGold-500 rounded-3xl p-8 max-w-4xl mx-auto shadow-sm">
-                <div class="text-center mb-6">
-                    <span class="bg-amberGold-500 text-kraft-900 font-bold text-xs px-3 py-1 rounded">糖香實驗室</span>
-                    <h3 class="font-serif-title text-2xl font-bold text-kraft-900 mt-2">🔥 古早味椪糖製作魔法 (Puffed Brown Sugar Recipe)</h3>
-                    <p class="text-xs text-kraft-800 mt-1">將物理與化學變化轉化為舌尖上的常民記憶！</p>
+            <!-- 4. 古早味椪糖 DIY 實驗室 (Desktop 5-Step Row) -->
+            <div class="bg-amberGold-50 border-2 border-dashed border-amberGold-500 rounded-3xl p-10 max-w-5xl mx-auto shadow-sm">
+                <div class="text-center mb-8">
+                    <span class="bg-amberGold-500 text-kraft-900 font-bold text-xs px-4 py-1 rounded">糖香實驗室</span>
+                    <h3 class="font-serif-title text-3xl font-bold text-kraft-900 mt-2">🔥 古早味椪糖製作魔法 (Puffed Brown Sugar Recipe)</h3>
+                    <p class="text-sm text-kraft-800 mt-1">將物理與化學變化轉化為舌尖上的常民記憶！</p>
                 </div>
 
-                <div class="grid sm:grid-cols-3 md:grid-cols-5 gap-3 text-center text-xs">
-                    <div class="bg-white p-3 rounded-xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-700 mb-1">Step 1</div>
+                <div class="grid lg:grid-cols-5 gap-4 text-center text-xs">
+                    <div class="bg-white p-4 rounded-2xl border border-amberGold-200 shadow-sm">
+                        <div class="font-bold text-amberGold-700 text-sm mb-1">Step 1</div>
                         <p class="text-kraft-800">砂糖:黑糖:水 = <b>2:1:1</b> 置於大銅勺炭火熬煮。</p>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-700 mb-1">Step 2</div>
+                    <div class="bg-white p-4 rounded-2xl border border-amberGold-200 shadow-sm">
+                        <div class="font-bold text-amberGold-700 text-sm mb-1">Step 2</div>
                         <p class="text-kraft-800">持續攪拌至水分蒸發，轉為濃稠琥珀紅褐色。</p>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-700 mb-1">Step 3</div>
+                    <div class="bg-white p-4 rounded-2xl border border-amberGold-200 shadow-sm">
+                        <div class="font-bold text-amberGold-700 text-sm mb-1">Step 3</div>
                         <p class="text-kraft-800"><b>離火關鍵：</b>加入微量「食用小蘇打粉」。</p>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-700 mb-1">Step 4 (澎發)</div>
+                    <div class="bg-white p-4 rounded-2xl border border-amberGold-200 shadow-sm">
+                        <div class="font-bold text-amberGold-700 text-sm mb-1">Step 4 (澎發)</div>
                         <p class="text-kraft-800">快速同方向攪拌，受熱產生 $CO_2$ 瞬間膨脹 Bloom！</p>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-amberGold-200">
-                        <div class="font-bold text-amberGold-700 mb-1">Step 5 (凝固)</div>
+                    <div class="bg-white p-4 rounded-2xl border border-amberGold-200 shadow-sm">
+                        <div class="font-bold text-amberGold-700 text-sm mb-1">Step 5 (凝固)</div>
                         <p class="text-kraft-800">靜置冷卻定型，成為帶有氣孔、酥脆的童年記憶。</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 5. 屏東雙糖廠與萬丹育種場 -->
-            <div class="mt-16 bg-white rounded-3xl p-8 border border-kraft-200">
-                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-6">🏭 屏東雙糖廠與萬丹育種場傳奇</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-xs text-kraft-800">
-                    <div class="p-4 bg-kraft-50 rounded-2xl border border-kraft-200 space-y-2">
-                        <h4 class="font-bold text-cane-900 text-sm">屏東糖廠（阿緱製糖所）</h4>
-                        <p>1909 年開工，日壓榨量達 3,600 噸。二戰末期遭美軍轟炸毀損後國人接手重建，留有「煙囪紀念碑」，為全臺糖業見證。</p>
+            <!-- 5. 屏東雙糖廠 (Desktop 3-Column) -->
+            <div class="mt-16 bg-white rounded-3xl p-10 border border-kraft-200">
+                <h3 class="font-serif-title text-2xl font-bold text-cane-900 text-center mb-8">🏭 屏東雙糖廠與萬丹育種場傳奇</h3>
+                <div class="grid lg:grid-cols-3 gap-8 text-sm text-kraft-800">
+                    <div class="p-6 bg-kraft-50 rounded-2xl border border-kraft-200 space-y-2">
+                        <h4 class="font-bold text-cane-900 text-base">屏東糖廠（阿緱製糖所）</h4>
+                        <p class="leading-relaxed">1909 年開工，日壓榨量達 3,600 噸。二戰末期遭美軍轟炸毀損後國人接手重建，留有「煙囪紀念碑」，為全臺糖業見證。</p>
                     </div>
-                    <div class="p-4 bg-kraft-50 rounded-2xl border border-kraft-200 space-y-2">
-                        <h4 class="font-bold text-cane-900 text-sm">南州糖廠（東港製糖所）</h4>
-                        <p>1921 年開工，日壓榨量 1,200 噸。與屏東廠構成屏南雙核心，依託糖鐵東港線，肩負南部農村生計直至 2003 年關閉。</p>
+                    <div class="p-6 bg-kraft-50 rounded-2xl border border-kraft-200 space-y-2">
+                        <h4 class="font-bold text-cane-900 text-base">南州糖廠（東港製糖所）</h4>
+                        <p class="leading-relaxed">1921 年開工，日壓榨量 1,200 噸。與屏東廠構成屏南雙核心，依託糖鐵東港線，肩負南部農村生計直至 2003 年關閉。</p>
                     </div>
-                    <div class="p-4 bg-amberGold-50 rounded-2xl border border-amberGold-200 space-y-2">
-                        <h4 class="font-bold text-amberGold-800 text-sm">台糖萬丹甘蔗育種場</h4>
-                        <p>1932 年成立，全臺唯一甘蔗育種場！每年 11 月底甘蔗開花季節舉辦「甘蔗季」，結合舊糖鐵健走與削甘蔗體驗。</p>
+                    <div class="p-6 bg-amberGold-50 rounded-2xl border border-amberGold-200 space-y-2">
+                        <h4 class="font-bold text-amberGold-800 text-base">台糖萬丹甘蔗育種場</h4>
+                        <p class="leading-relaxed">1932 年成立，全臺唯一甘蔗育種場！每年 11 月底甘蔗開花季節舉辦「甘蔗季」，結合舊糖鐵健走與削甘蔗體驗。</p>
                     </div>
                 </div>
             </div>
@@ -713,75 +746,76 @@
         </div>
     </section>
 
-    <!-- 第五大主題：新園糖鐵小旅行 (Local Tours & Map) -->
-    <section id="tours" class="py-20 bg-kraft-50 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 第五大主題：新園糖鐵小旅行 (Local Tours & Map Desktop View) -->
+    <section id="tours" class="py-24 bg-kraft-50 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-amberGold-600 font-bold text-sm tracking-widest uppercase">SECTION 05</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cane-900 mt-1">新園糖鐵小旅行</h2>
-                <p class="mt-2 text-kraft-800 font-medium">實地走訪新園鄉糖業遺跡與風土景點</p>
-                <div class="w-16 h-1 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="font-serif-title text-4xl font-bold text-cane-900 mt-2">新園糖鐵小旅行</h2>
+                <p class="mt-3 text-kraft-800 font-medium text-lg">實地走訪新園鄉糖業遺跡與風土景點</p>
+                <div class="w-20 h-1.5 bg-amberGold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-8">
-                <!-- 左側地圖推薦路線 -->
-                <div class="lg:col-span-7 bg-white p-6 rounded-3xl shadow-sm border border-kraft-200 space-y-6">
-                    <h3 class="font-serif-title text-2xl font-bold text-cane-900 flex items-center gap-2">
+            <!-- 電腦版雙欄（7/5 split）大規格導覽地圖 -->
+            <div class="grid lg:grid-cols-12 gap-10">
+                <!-- 左側地圖推薦路線 (7 欄) -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl shadow-sm border border-kraft-200 space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-cane-900 flex items-center gap-3">
                         <i class="fa-solid fa-bicycle text-amberGold-500"></i>
                         <span>推薦路線：親子蔗香鐵馬單車巡禮</span>
                     </h3>
                     <div class="space-y-4 text-sm text-kraft-800">
-                        <div class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                        <div class="flex items-start gap-4 p-3 bg-kraft-50 rounded-xl">
+                            <span class="w-7 h-7 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
                             <div>
-                                <h4 class="font-bold text-cane-900">新園媽祖廟（新園龍聖宮）前街道</h4>
-                                <p class="text-xs text-kraft-800">昔日糖商熱絡交易「砂糖棧單」之繁華街景，體驗老新園文化中心。</p>
+                                <h4 class="font-bold text-cane-900 text-base">新園媽祖廟（新園龍聖宮）前街道</h4>
+                                <p class="text-xs text-kraft-800 mt-1">昔日糖商熱絡交易「砂糖棧單」之繁華街景，體驗老新園文化中心。</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                        <div class="flex items-start gap-4 p-3 bg-kraft-50 rounded-xl">
+                            <span class="w-7 h-7 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
                             <div>
-                                <h4 class="font-bold text-cane-900">仙公廟與港西舊軌跡</h4>
-                                <p class="text-xs text-kraft-800">尋找隱沒於綠意間的糖鐵舊軌道跡，對照 1950 年代五分車馳騁盛況。</p>
+                                <h4 class="font-bold text-cane-900 text-base">仙公廟與港西舊軌跡</h4>
+                                <p class="text-xs text-kraft-800 mt-1">尋找隱沒於綠意間的糖鐵舊軌道跡，對照 1950 年代五分車馳騁盛況。</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3">
-                            <span class="w-6 h-6 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                        <div class="flex items-start gap-4 p-3 bg-kraft-50 rounded-xl">
+                            <span class="w-7 h-7 rounded-full bg-cane-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
                             <div>
-                                <h4 class="font-bold text-cane-900">烏龍聚落與鹽埔子車站舊址</h4>
-                                <p class="text-xs text-kraft-800">探訪東港線鹽埔子終點站，欣賞高屏溪畔田園風光與傳統紅豆/水稻農田。</p>
+                                <h4 class="font-bold text-cane-900 text-base">烏龍聚落與鹽埔子車站舊址</h4>
+                                <p class="text-xs text-kraft-800 mt-1">探訪東港線鹽埔子終點站，欣賞高屏溪畔田園風光與傳統水稻/紅豆農田。</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 地圖模塊 Placeholder -->
-                    <div class="bg-kraft-100 rounded-2xl h-64 flex items-center justify-center border border-kraft-300 relative overflow-hidden">
-                        <div class="text-center p-4">
-                            <i class="fa-solid fa-map-location-dot text-4xl text-amberGold-600 mb-2"></i>
-                            <p class="font-serif-title font-bold text-cane-900">新園糖鐵東港線數位導覽地圖</p>
-                            <p class="text-xs text-kraft-800 mt-1">結合 Google Maps 座標標註舊站址與文史景點</p>
+                    <!-- 大螢幕導覽地圖視覺卡片 -->
+                    <div class="bg-gradient-to-br from-kraft-100 to-amberGold-100 rounded-2xl h-72 flex items-center justify-center border border-kraft-300 relative overflow-hidden shadow-inner">
+                        <div class="text-center p-6 space-y-2">
+                            <i class="fa-solid fa-map-location-dot text-5xl text-amberGold-600 mb-2"></i>
+                            <p class="font-serif-title font-bold text-xl text-cane-900">新園糖鐵東港線數位導覽地圖</p>
+                            <p class="text-xs text-kraft-800">結合地理資訊座標標註舊站址與文史景點</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 右側體驗預約 -->
-                <div class="lg:col-span-5 bg-cane-900 text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <span class="bg-amberGold-500 text-kraft-900 text-xs font-bold px-3 py-1 rounded-md">手作活動</span>
-                        <h3 class="font-serif-title text-2xl font-bold">新園古法黑糖體驗與走讀</h3>
-                        <p class="text-xs text-cane-100 leading-relaxed">
+                <!-- 右側體驗預約 (5 欄) -->
+                <div class="lg:col-span-5 bg-cane-900 text-white p-10 rounded-3xl shadow-xl flex flex-col justify-between">
+                    <div class="space-y-5">
+                        <span class="bg-amberGold-500 text-kraft-900 text-xs font-bold px-3.5 py-1.5 rounded-md inline-block">手作活動</span>
+                        <h3 class="font-serif-title text-3xl font-bold">新園古法黑糖體驗與走讀</h3>
+                        <p class="text-sm text-cane-100 leading-relaxed">
                             親手體驗蔗汁壓榨與古法柴燒黑糖熬煮過程，品嚐現熬黑糖冰棒，並由文史志工帶領參觀砂糖棧單展覽。
                         </p>
-                        <ul class="text-xs space-y-2 text-cane-200 pt-2">
-                            <li><i class="fa-solid fa-check text-amberGold-400 mr-2"></i>活動時間：約 2.5 小時</li>
-                            <li><i class="fa-solid fa-check text-amberGold-400 mr-2"></i>適合對象：親子家庭、校外教學、企業團體</li>
-                            <li><i class="fa-solid fa-check text-amberGold-400 mr-2"></i>包含項目：導覽、黑糖手作DIY、繪本導讀卡</li>
+                        <ul class="text-xs space-y-3 text-cane-200 pt-3">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amberGold-400 text-base"></i><span>活動時間：約 2.5 小時</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amberGold-400 text-base"></i><span>適合對象：親子家庭、校外教學、企業團體</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amberGold-400 text-base"></i><span>包含項目：導覽、黑糖手作DIY、繪本導讀卡</span></li>
                         </ul>
                     </div>
 
-                    <a href="#booking" class="mt-8 block w-full text-center bg-amberGold-500 hover:bg-amberGold-600 text-kraft-900 font-bold py-3.5 rounded-xl transition-colors">
+                    <a href="#booking" class="mt-10 block w-full text-center bg-amberGold-500 hover:bg-amberGold-600 text-kraft-900 font-bold py-4 rounded-xl shadow-md transition-colors text-base">
                         立即預約體驗行程
                     </a>
                 </div>
@@ -789,50 +823,50 @@
         </div>
     </section>
 
-    <!-- 第六大主題：最新消息與聯絡我們 (News & Contact) -->
-    <section id="news" class="py-20 bg-kraft-100 border-b border-kraft-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 第六大主題：最新消息與聯絡我們 (News & Contact Desktop View) -->
+    <section id="news" class="py-24 bg-kraft-100 border-b border-kraft-200">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
             <div class="grid lg:grid-cols-12 gap-12">
 
-                <!-- 左側最新消息 -->
+                <!-- 左側最新消息 (6 欄) -->
                 <div class="lg:col-span-6 space-y-6">
                     <h2 class="font-serif-title text-3xl font-bold text-cane-900">最新消息與活動公告</h2>
-                    <div class="w-12 h-1 bg-amberGold-500 rounded-full"></div>
+                    <div class="w-16 h-1.5 bg-amberGold-500 rounded-full"></div>
 
                     <div class="space-y-4">
-                        <div class="bg-white p-5 rounded-2xl border border-kraft-200 shadow-sm hover:border-amberGold-400 transition-colors">
+                        <div class="bg-white p-6 rounded-2xl border border-kraft-200 shadow-sm hover:border-amberGold-400 transition-colors">
                             <span class="text-xs text-amberGold-700 font-bold">2026.08.15</span>
-                            <h3 class="font-serif-title font-bold text-base text-cane-900 mt-1">《新園的甜甜時光機》故事志工招募中</h3>
-                            <p class="text-xs text-kraft-800 mt-1">歡迎對在地鄉土文化教育有熱情的朋友加入，共同推廣屏東糖業繪本！</p>
+                            <h3 class="font-serif-title font-bold text-lg text-cane-900 mt-1">《新園的甜甜時光機》故事志工熱烈招募中</h3>
+                            <p class="text-xs text-kraft-800 mt-2">歡迎對在地鄉土文化教育有熱情的朋友加入，共同推廣屏東糖業繪本！</p>
                         </div>
 
-                        <div class="bg-white p-5 rounded-2xl border border-kraft-200 shadow-sm hover:border-amberGold-400 transition-colors">
+                        <div class="bg-white p-6 rounded-2xl border border-kraft-200 shadow-sm hover:border-amberGold-400 transition-colors">
                             <span class="text-xs text-amberGold-700 font-bold">2026.08.01</span>
-                            <h3 class="font-serif-title font-bold text-base text-cane-900 mt-1">「砂糖棧單」復刻文展於新園隆重登場</h3>
-                            <p class="text-xs text-kraft-800 mt-1">展出 1950 年代珍貴蔗農糖寄存棧單原件與糖商期票歷史檔案。</p>
+                            <h3 class="font-serif-title font-bold text-lg text-cane-900 mt-1">「砂糖棧單」復刻特展於新園隆重登場</h3>
+                            <p class="text-xs text-kraft-800 mt-2">展出 1950 年代珍貴蔗農糖寄存棧單原件與糖商期票歷史檔案。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 右側聯絡與預約表單 -->
-                <div id="booking" class="lg:col-span-6 bg-white p-8 rounded-3xl border border-kraft-200 shadow-lg">
-                    <h3 class="font-serif-title text-2xl font-bold text-cane-900 mb-2">團體導覽預約與聯絡表單</h3>
-                    <p class="text-xs text-kraft-800 mb-6">請填寫您的需求，我們將有專人於 24 小時內與您聯繫。</p>
+                <!-- 右側聯絡與預約表單 (6 欄) -->
+                <div id="booking" class="lg:col-span-6 bg-white p-10 rounded-3xl border border-kraft-200 shadow-xl">
+                    <h3 class="font-serif-title text-3xl font-bold text-cane-900 mb-2">團體導覽預約與聯絡表單</h3>
+                    <p class="text-xs text-kraft-800 mb-8">請填寫您的需求，我們將有專人於 24 小時內與您聯繫。</p>
 
-                    <form onsubmit="event.preventDefault(); alert('感謝您的預約表單送出！我們會盡快與您聯繫。');" class="space-y-4 text-sm">
+                    <form onsubmit="event.preventDefault(); alert('感謝您的預約表單送出！我們會盡快與您聯繫。');" class="space-y-5 text-sm">
                         <div>
-                            <label class="block font-bold text-kraft-900 mb-1">姓名 / 單位名稱：</label>
-                            <input type="text" required placeholder="請輸入姓名" class="w-full px-4 py-2.5 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none">
+                            <label class="block font-bold text-kraft-900 mb-1.5">姓名 / 單位名稱：</label>
+                            <input type="text" required placeholder="請輸入姓名" class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none">
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-2 gap-5">
                             <div>
-                                <label class="block font-bold text-kraft-900 mb-1">聯絡電話：</label>
-                                <input type="tel" required placeholder="09xx-xxx-xxx" class="w-full px-4 py-2.5 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none">
+                                <label class="block font-bold text-kraft-900 mb-1.5">聯絡電話：</label>
+                                <input type="tel" required placeholder="09xx-xxx-xxx" class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none">
                             </div>
                             <div>
-                                <label class="block font-bold text-kraft-900 mb-1">預約項目：</label>
-                                <select class="w-full px-4 py-2.5 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none">
+                                <label class="block font-bold text-kraft-900 mb-1.5">預約項目：</label>
+                                <select class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none font-medium">
                                     <option>新園糖鐵走讀導覽</option>
                                     <option>黑糖體驗手作DIY</option>
                                     <option>繪本故事志工培訓</option>
@@ -842,11 +876,11 @@
                         </div>
 
                         <div>
-                            <label class="block font-bold text-kraft-900 mb-1">留言內容與預計參訪人數：</label>
-                            <textarea rows="3" placeholder="請填寫預計參訪日期、人數或特殊需求..." class="w-full px-4 py-2.5 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none"></textarea>
+                            <label class="block font-bold text-kraft-900 mb-1.5">留言內容與預計參訪人數：</label>
+                            <textarea rows="3" placeholder="請填寫預計參訪日期、人數或特殊需求..." class="w-full px-4 py-3 border border-kraft-300 rounded-xl focus:ring-2 focus:ring-amberGold-500 focus:outline-none"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-cane-700 hover:bg-cane-800 text-white font-bold py-3 rounded-xl shadow transition-colors">
+                        <button type="submit" class="w-full bg-cane-700 hover:bg-cane-800 text-white font-bold py-4 rounded-xl shadow-md transition-colors text-base">
                             送出預約表單
                         </button>
                     </form>
@@ -856,34 +890,35 @@
         </div>
     </section>
 
-    <!-- 頁尾 Footer -->
-    <footer class="bg-kraft-900 text-kraft-200 py-12 border-t border-kraft-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+    <!-- 頁尾 Footer (Desktop Widescreen Footer) -->
+    <footer class="bg-kraft-900 text-kraft-200 py-14 border-t border-kraft-800">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-kraft-800 pb-10">
                 <div class="text-center md:text-left space-y-2">
-                    <div class="flex items-center justify-center md:justify-start gap-2">
-                        <div class="w-8 h-8 rounded-full bg-amberGold-500 text-kraft-900 flex items-center justify-center font-bold font-serif">糖</div>
-                        <span class="font-serif-title font-bold text-xl text-white">新意糖香</span>
+                    <div class="flex items-center justify-center md:justify-start gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amberGold-500 text-kraft-900 flex items-center justify-center font-bold font-serif text-lg">糖</div>
+                        <span class="font-serif-title font-bold text-2xl text-white">新意糖香</span>
                     </div>
                     <p class="text-xs text-kraft-400">屏東縣新園鄉糖業歷史、繪本與農業科普數位文化平台</p>
                 </div>
 
-                <div class="flex gap-6 text-kraft-300 text-sm">
-                    <a href="#about" class="hover:text-amberGold-400">關於我們</a>
-                    <a href="#picturebook" class="hover:text-amberGold-400">繪本試閱</a>
-                    <a href="#history" class="hover:text-amberGold-400">砂糖棧單</a>
-                    <a href="#science" class="hover:text-amberGold-400">農業科普</a>
+                <div class="flex gap-8 text-kraft-300 text-sm font-medium">
+                    <a href="#about" class="hover:text-amberGold-400 transition-colors">關於我們</a>
+                    <a href="#picturebook" class="hover:text-amberGold-400 transition-colors">繪本試閱</a>
+                    <a href="#history" class="hover:text-amberGold-400 transition-colors">砂糖棧單</a>
+                    <a href="#science" class="hover:text-amberGold-400 transition-colors">農業科普</a>
+                    <a href="#tours" class="hover:text-amberGold-400 transition-colors">糖鐵小旅行</a>
                 </div>
+            </div>
 
-                <div class="text-xs text-kraft-500 text-center md:text-right">
-                    <p>© 2026 新意糖香 All Rights Reserved.</p>
-                    <p class="mt-1">指導/致謝單位：台糖萬丹甘蔗育種場、屏東縣新園鄉文史協會</p>
-                </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-kraft-500 gap-4">
+                <p>© 2026 新意糖香 All Rights Reserved.</p>
+                <p>指導/致謝單位：台糖萬丹甘蔗育種場、屏東縣新園鄉文史協會</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript 腳本邏輯 -->
+    <!-- JavaScript 腳本邏輯 (Desktop Reader Logic) -->
     <script>
         // 1. 繪本頁面數據
         const bookPages = [
@@ -934,7 +969,7 @@
                 title: "第七頁：糖商熱鬧的交易盛況",
                 imageBg: "🏪",
                 quote: "糖在當時比黃金還珍貴！許多糖商專門到新園媽祖廟前的熱鬧街道上，急著用大把現金向農夫買棧單。這張小小的『砂糖棧單』，成了臺灣最早的期票，養活了無數新園家庭。",
-                note: "場景：新園媽祖廟前熱鬧街道上，糖商手拿現金向蔗農熱情收購棧單。"
+                note: "場景：新園媽祖廟前的熱鬧街道上，糖商手拿現金向蔗農熱情收購棧單。"
             },
             {
                 page: 8,
@@ -954,27 +989,46 @@
 
         let currentPageIdx = 0;
 
-        function renderPage(idx) {
+        function renderDesktopBookSpread(idx) {
             const displayArea = document.getElementById('bookDisplayArea');
             const pageInd = document.getElementById('pageIndicator');
             const data = bookPages[idx];
 
             pageInd.innerText = `頁次 ${data.page} / ${bookPages.length}`;
 
+            // 雙頁開本設計：左頁圖卡視覺，右頁故事文字與圖面構圖解析
             displayArea.innerHTML = `
-                <div class="grid md:grid-cols-12 gap-6 items-center">
-                    <div class="md:col-span-4 bg-kraft-100 border border-kraft-300 rounded-2xl h-48 flex items-center justify-center text-6xl shadow-inner">
-                        ${data.imageBg}
+                <div class="grid lg:grid-cols-2 gap-10 items-stretch min-h-[380px]">
+                    <!-- 左頁：圖卡插畫視覺預覽 -->
+                    <div class="bg-kraft-100 border border-kraft-300 rounded-2xl p-8 flex flex-col justify-between items-center text-center shadow-inner relative overflow-hidden">
+                        <span class="absolute top-4 left-4 bg-white/80 text-kraft-800 text-xs px-3 py-1 rounded-full border border-kraft-200 font-mono">LEFT PAGE - 視覺圖卡</span>
+                        <div class="text-8xl my-auto py-8 transform hover:scale-110 transition-transform duration-300">
+                            ${data.imageBg}
+                        </div>
+                        <div class="w-full pt-4 border-t border-kraft-300/60 flex justify-between items-center text-xs text-kraft-800">
+                            <span>《新園的甜甜時光機》</span>
+                            <span class="font-mono font-bold">P. 0${data.page}</span>
+                        </div>
                     </div>
-                    <div class="md:col-span-8 space-y-3">
-                        <span class="text-xs font-bold text-amberGold-700 bg-amberGold-100 px-2.5 py-1 rounded">圖卡故事腳本</span>
-                        <h4 class="font-serif-title font-bold text-xl text-cane-900">${data.title}</h4>
-                        <p class="text-kraft-900 text-sm sm:text-base leading-relaxed bg-kraft-50 p-4 rounded-xl border border-kraft-200">
-                            「${data.quote}」
-                        </p>
-                        <p class="text-xs text-kraft-800 italic">
-                            <i class="fa-solid fa-palette text-amberGold-600 mr-1"></i>視覺構圖指南：${data.note}
-                        </p>
+
+                    <!-- 右頁：繪本故事腳本與導覽 -->
+                    <div class="bg-white border border-kraft-200 rounded-2xl p-8 flex flex-col justify-between space-y-4 shadow-sm">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-amberGold-700 bg-amberGold-100 px-3 py-1 rounded-md">RIGHT PAGE - 故事內頁腳本</span>
+                                <span class="text-xs text-kraft-800 font-mono">頁碼：${data.page} / 9</span>
+                            </div>
+                            <h4 class="font-serif-title font-bold text-2xl text-cane-900 border-b border-kraft-200 pb-3">${data.title}</h4>
+                            <p class="text-kraft-900 text-base leading-relaxed bg-kraft-50 p-5 rounded-xl border border-kraft-200 font-medium">
+                                「${data.quote}」
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-kraft-200">
+                            <p class="text-xs text-kraft-800 italic leading-relaxed">
+                                <i class="fa-solid fa-palette text-amberGold-600 mr-1.5"></i><b>繪者視覺構圖指南：</b>${data.note}
+                            </p>
+                        </div>
                     </div>
                 </div>
             `;
@@ -986,70 +1040,31 @@
             // 更新點點標示
             const dotsContainer = document.getElementById('dotsContainer');
             dotsContainer.innerHTML = bookPages.map((_, i) => `
-                <button onclick="goToPage(${i})" class="w-2.5 h-2.5 rounded-full transition-all ${i === idx ? 'bg-amberGold-500 w-6' : 'bg-kraft-300'}"></button>
+                <button onclick="goToPage(${i})" title="第 ${i+1} 頁" class="h-2.5 rounded-full transition-all ${i === idx ? 'bg-amberGold-500 w-8' : 'bg-kraft-300 w-2.5 hover:bg-kraft-400'}"></button>
             `).join('');
         }
 
         function goToPage(i) {
             currentPageIdx = i;
-            renderPage(currentPageIdx);
+            renderDesktopBookSpread(currentPageIdx);
         }
 
         document.getElementById('prevPageBtn').addEventListener('click', () => {
             if (currentPageIdx > 0) {
                 currentPageIdx--;
-                renderPage(currentPageIdx);
+                renderDesktopBookSpread(currentPageIdx);
             }
         });
 
         document.getElementById('nextPageBtn').addEventListener('click', () => {
             if (currentPageIdx < bookPages.length - 1) {
                 currentPageIdx++;
-                renderPage(currentPageIdx);
+                renderDesktopBookSpread(currentPageIdx);
             }
         });
 
-        // 2. 砂糖棧單試算器邏輯
-        document.getElementById('calculateBtn').addEventListener('click', () => {
-            const weight = parseFloat(document.getElementById('caneWeightInput').value) || 0;
-            const ratio = parseFloat(document.getElementById('shareRatioSelect').value) || 0.5;
-
-            // 假設含糖率 12%
-            const totalSugar = weight * 0.12; 
-            const farmerSugar = totalSugar * ratio; // 蔗農實得
-            const bags = Math.floor(farmerSugar / 50);
-            const remainder = Math.round(farmerSugar % 50);
-
-            document.getElementById('resTotalSugar').innerText = `${totalSugar.toFixed(1)} kg`;
-            document.getElementById('resFarmerSugar').innerText = `${farmerSugar.toFixed(1)} kg`;
-
-            let bagText = `${bags} 包`;
-            if (remainder > 0) {
-                bagText += ` + 散糖 ${remainder} kg`;
-            }
-            document.getElementById('resBags').innerText = bagText;
-
-            // Equivalent calculation note
-            let equivNote = "";
-            if (farmerSugar < 30) {
-                equivNote = "可提領家中使用之特二砂，或至媽祖廟前店家貼補日常生活用品！";
-            } else if (farmerSugar < 100) {
-                equivNote = `約可換取 ${(farmerSugar / 40).toFixed(1)} 包大日本麵粉，或向糖商即時兌換現金補助家庭開支！`;
-            } else {
-                equivNote = `相當於獲得 ${(bags).toString()} 大包特二砂棧單！在 1950 年代可直接作為極品嫁妝或資助興修新園磚瓦大厝之重要資產！`;
-            }
-            document.getElementById('resEquiv').innerText = equivNote;
-        });
-
-        // 3. 手機選單開關
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // 初始化繪本第一頁
-        renderPage(0);
+        // 初始化繪本第一頁雙頁開本
+        renderDesktopBookSpread(0);
     </script>
 </body>
 </html>
